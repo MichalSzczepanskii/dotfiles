@@ -1,0 +1,10 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ["~"]
+
+- link:
+    ~\AppData\Local\nvim\: ./nvim
+    ~\Documents\WindowsPowerShell\: ./WindowsPowerShell
