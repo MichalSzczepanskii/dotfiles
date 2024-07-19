@@ -8,3 +8,4 @@
 - link:
     ~\AppData\Local\nvim\: ./nvim
     ~\Documents\WindowsPowerShell\: ./WindowsPowerShell
+    ~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json: ./WindowsTerminal/settings.json
