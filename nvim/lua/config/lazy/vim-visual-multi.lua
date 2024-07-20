@@ -1,5 +1,6 @@
 return {
 	"mg979/vim-visual-multi",
+	event = { "BufReadPre", "BufNewFile" },
 	init = function()
 		vim.g.VM_default_mapping = 0
 		vim.g.VM_maps = {

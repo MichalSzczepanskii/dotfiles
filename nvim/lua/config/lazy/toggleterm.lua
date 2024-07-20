@@ -10,6 +10,12 @@ return {
 		},
 		size = 20,
 		shell = "powershell",
+		shade_terminals = false,
+		highlights = {
+			Normal = {
+				guibg = "#282c34",
+			},
+		},
 	},
 	config = function(_, opt)
 		require("toggleterm").setup(opt)
