@@ -1,11 +1,11 @@
 return {
-	{"folke/which-key.nvim", 
-	event = "VeryLazy",
-	opts = {
-		prefix = "",
-		silent = true,
-		noremap = true,
-		nowait = true,
-	}
-}
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		opts = {
+			silent = true,
+			noremap = true,
+			nowait = true,
+		},
+	},
 }

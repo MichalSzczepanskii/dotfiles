@@ -43,6 +43,7 @@ autocmd("LspAttach", {
 		vim.keymap.set("n", "gd", ":Lspsaga finder<CR>", spread(opts)({ desc = "Show definition" }))
 		vim.keymap.set("n", "<leader>a", "<cmd>Lspsaga code_action<CR>", spread(opts)({ desc = "Code action" }))
 		vim.keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>", spread(opts)({ desc = "Peek definition" }))
+		vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>", spread(opts)({ desc = "Rename in code" }))
 
 		vim.keymap.set("n", "<leader>A", function()
 			require("telescope.builtin").lsp_dynamic_workspace_symbols()

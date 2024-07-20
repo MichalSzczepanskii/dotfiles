@@ -1,19 +1,18 @@
 Clear-Host
-#oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/material.omp.json" | Invoke-Expression
 oh-my-posh init pwsh --config ~/Documents/WindowsPowerShell/theme.toml | Invoke-Expression
 
+Invoke-Expression (& { (zoxide init --cmd cd powershell | Out-String) })
+
+Import-Module PSFzf
+
 Set-PSReadLineOption -PredictionSource History
-Set-PSReadlineOption -PredictionViewStyle ListView
+#Set-PSReadlineOption -PredictionViewStyle ListView
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
-function archive-invoices {
-    & 'C:\Users\Michal\Documents\WindowsPowerShell\scripts\archive-invoices.ps1'
-}
+Set-PsFzfOption -PSReadLineChordProvider 'Ctrl+F' -PSReadLineChordReverseHistory 'Ctrl+R'
 
-# Import the Chocolatey Profile that contains the necessary code to enable
-# tab-completions to function for `choco`.
-# Be aware that if you are missing these lines from your profile, tab completion
-# for `choco` will not function.
-# See https://ch0.co/tab-completion for details.
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"

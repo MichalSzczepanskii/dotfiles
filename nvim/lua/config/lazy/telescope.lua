@@ -13,7 +13,6 @@ return {
 				find_files = {
 					file_ignore_patterns = {
 						"node_modules",
-						".git",
 						".angular",
 						"dist",
 						"build",
@@ -28,6 +27,7 @@ return {
 		vim.keymap.set("n", "<leader>vh", builtin.help_tags, { desc = "Help tags" })
 		vim.keymap.set("n", "<leader>F", builtin.live_grep, { desc = "Find in files" })
 		vim.keymap.set("n", ";e", builtin.diagnostics, { desc = "Find in errors" })
+		vim.keymap.set("n", "<M-0>", builtin.git_status, { desc = "Find in changed files (Git)" })
 		vim.keymap.set("n", "<leader>?", builtin.keymaps, { desc = "Find in keymaps" })
 	end,
 }
